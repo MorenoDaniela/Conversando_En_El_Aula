@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "Conversando_En_El_Aula",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
