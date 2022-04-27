@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Conversando_En_El_Aula</string>
+    <string name="title_activity_main">Conversando_En_El_Aula</string>
+    <string name="package_name">conversando.app</string>
+    <string name="custom_url_scheme">conversando.app</string>
+</resources>

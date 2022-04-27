@@ -1,0 +1,24 @@
+{
+	"appId": "conversando.app",
+	"appName": "Conversando_En_El_Aula",
+	"webDir": "www",
+	"bundledWebRuntime": false,
+	"backgroundColor": "#BC52E5",
+	"plugins": {
+		"SplashScreen": {
+			"launchShowDuration": 0,
+			"launchAutoHide": true,
+			"backgroundColor": "#BC52E5",
+			"androidSplashResourceName": "splash",
+			"androidScaleType": "CENTER_CROP",
+			"showSpinner": true,
+			"androidSpinnerStyle": "large",
+			"iosSpinnerStyle": "small",
+			"spinnerColor": "#999999",
+			"splashFullScreen": true,
+			"splashImmersive": true,
+			"layoutName": "launch_screen",
+			"useDialog": true
+		}
+	}
+}
