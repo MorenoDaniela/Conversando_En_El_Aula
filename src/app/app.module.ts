@@ -19,6 +19,9 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
 // Auth service
 import { AuthService } from "./shared/services/auth.service";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InicioComponent } from './components/inicio/inicio.component';
+import { ChatBComponent } from './components/chat-b/chat-b.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 @NgModule({
   declarations: [AppComponent,
@@ -26,7 +29,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SignInComponent,
     SignUpComponent,
     ForgotPasswordComponent,
-    VerifyEmailComponent
+    VerifyEmailComponent,
+    InicioComponent,
+    ChatBComponent,
+    ChatComponent
   ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,AngularFireModule.initializeApp(environment.firebase),
