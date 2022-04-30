@@ -15,13 +15,17 @@ export class ChatComponent implements OnInit {
   error:string="No puedes enviar mensajes vacios.";
   hayError:boolean=false;
   spinner:boolean=true;
-  constructor(public chatService: ChatService, public authService: AuthService, public router:Router) { }
+  constructor(public chatService: ChatService, public authService: AuthService, public router:Router) 
+  {
+    console.log("en constructor "+this.spinner);
+   }
 
   ngOnInit() {
     setTimeout(() => {
+      console.log("en oninit "+this.spinner);
       this.cargarMensajes();
     }, 1000);
-    this.spinner=false;
+  
   }
 
   mandarMensaje(){
@@ -58,6 +62,8 @@ export class ChatComponent implements OnInit {
         })
       })
     ).subscribe(datos => {
+      console.log("adentro de cargar "+this.spinner);
+      this.spinner=false;
     });
    }
 

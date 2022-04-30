@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./chat-b.component.scss'],
 })
 export class ChatBComponent implements OnInit {
+  spinner:boolean=true;
   mensaje: string;
   listadoMensajesMostrar: Array<Mensaje> = new Array<Mensaje>();
   error:string="No puedes enviar mensajes vacios.";
@@ -58,6 +59,7 @@ export class ChatBComponent implements OnInit {
         })
       })
     ).subscribe(datos => {
+      this.spinner=false;
     });
    }
 

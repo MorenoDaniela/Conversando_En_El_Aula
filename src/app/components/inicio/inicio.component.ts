@@ -13,9 +13,9 @@ export class InicioComponent implements OnInit {
   ngOnInit() {}
 
   a4B(){
-    this.router.navigate(['cuartoA']);
+    this.router.navigate(['cuartoB']);
   }
   a4A(){
-    this.router.navigate(['cuartoB']);
+    this.router.navigate(['cuartoA']);
   }
 }
