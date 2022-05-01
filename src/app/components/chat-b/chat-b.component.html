@@ -12,13 +12,13 @@
     </ion-col>
   </ion-row>
    
-    <div class="container d-flex justify-content-center">
-      <div class="card mt-5">
+    <div class="d-flex justify-content-center">
+      <div class="card">
           <div class="d-flex flex-row justify-content-between p-3 adiv text-white"> <i class="fas fa-chevron-left"></i> <span class="pb-3">Chat 4B</span> <i class="fas fa-times"></i> </div>
           
           <div *ngFor="let mensaje of listadoMensajesMostrar">
             <ng-template [ngIf]="!mensaje.siSoy">
-              <div class="d-flex flex-row p-3"> 
+              <div class="flex-row p-3"> 
     
              
                  
@@ -34,7 +34,7 @@
              
             </ng-template>
             <ng-template [ngIf]="mensaje.siSoy">
-              <div class="d-flex flex-row p-3">
+              <div class="flex-row p-3 ms-1">
                 <div class="bg-white mr-2 p-3"><span class="text-muted">{{mensaje.mensaje}}</span>
                   <br>
                   <ion-note style="font-size: 0.6rem;">

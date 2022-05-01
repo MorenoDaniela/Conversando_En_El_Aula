@@ -2,118 +2,64 @@
   <div class="spin" *ngIf="spinner">
     <ion-spinner name="crescent"></ion-spinner>
 </div>
-<ion-row>
-  <ion-col>
-    <ion-button color="success" (click)="irASalas()" expand="block">Salas</ion-button>
-  </ion-col>
-  <ion-col>
-    <ion-button color="danger" (click)="authService.SignOut()" expand="block">Salir</ion-button>
-  </ion-col>
-</ion-row>
-  <!-- <div class="container" style="background-color: #BC52E5; border-bottom: 5px;" >
-    <ion-row>
-      <ion-col>
-        <ion-button color="success" (click)="irASalas()" expand="block">Salas</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button color="danger" (click)="authService.SignOut()" expand="block">Salir</ion-button>
-      </ion-col>
-    </ion-row>
-
-    <div *ngFor="let mensaje of listadoMensajesMostrar">
-      <ion-list >
-        <ng-template [ngIf]="!mensaje.siSoy">
-          <ion-item class="alert-success">
-           
-           <p >{{mensaje.mensaje}}</p>
-          </ion-item>
-         <ion-item>
-          <ion-note slot="end">{{mensaje.fecha}}  {{mensaje.email}}
-
-              
-          </ion-note>
-         </ion-item>
+<div *ngIf="!spinner">
+  <ion-row>
+    <ion-col>
+      <ion-button color="success" (click)="irASalas()" expand="block">Salas</ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button color="danger" (click)="authService.SignOut()" expand="block">Salir</ion-button>
+    </ion-col>
+  </ion-row>
+   
+    <div class="d-flex justify-content-center">
+      <div class="card">
+          <div class="d-flex flex-row justify-content-between p-3 adiv text-white"> <i class="fas fa-chevron-left"></i> <span class="pb-3">Chat 4A</span> <i class="fas fa-times"></i> </div>
           
-        </ng-template>
-       
-        <ng-template [ngIf]="mensaje.siSoy">
-          <ion-item >
-            <ion-note>{{mensaje.mensaje}}</ion-note>
-          </ion-item>
-       
-        </ng-template>
-      </ion-list>
-    </div>
-
-
-    <div class="row">
-      <div class="row col text-center">
-        <ng-template [ngIf]="this.hayError">
-          <span class="alert-danger">{{this.error}}</span>
-        </ng-template>
-        <br>
-        <ion-input type="text" class="form-control" placeholder="Escriba su mensaje" [(ngModel)]='mensaje'></ion-input>
-
-        
-        <br>
-        <ion-button color="success" (click)="mandarMensaje()" expand="block">Enviar</ion-button>
-      
-      </div>
-      <br>
-    </div>
-  </div> -->
-  <div class="container d-flex justify-content-center">
-    <div class="card mt-5">
-        <div class="d-flex flex-row justify-content-between p-3 adiv text-white"> <i class="fas fa-chevron-left"></i> <span class="pb-3">Chat 4A</span> <i class="fas fa-times"></i> </div>
-        
-        <div *ngFor="let mensaje of listadoMensajesMostrar">
-          <ng-template [ngIf]="!mensaje.siSoy">
-            <div class="d-flex flex-row p-3"> 
-  
-           
-               
-                <div class="chat ml-2 p-3">{{mensaje.mensaje}}
+          <div *ngFor="let mensaje of listadoMensajesMostrar">
+            <ng-template [ngIf]="!mensaje.siSoy">
+              <div class="flex-row p-3"> 
+    
+             
+                 
+                  <div class="chat ml-2 p-3">{{mensaje.mensaje}}
+                    <br>
+                    <ion-note style="font-size: 0.6rem;">
+                      {{mensaje.email}} {{mensaje.fecha}}
+                    </ion-note>
+                   
+                  </div>
+                  
+              </div>
+             
+            </ng-template>
+            <ng-template [ngIf]="mensaje.siSoy">
+              <div class="flex-row p-3 ms-1">
+                <div class="bg-white mr-2 p-3"><span class="text-muted">{{mensaje.mensaje}}</span>
                   <br>
                   <ion-note style="font-size: 0.6rem;">
-                    {{mensaje.email}} {{mensaje.fecha}}
+                    {{mensaje.fecha}}
                   </ion-note>
-                 
                 </div>
                 
+                 
             </div>
+            </ng-template>
            
-          </ng-template>
-          <ng-template [ngIf]="mensaje.siSoy">
-            <div class="d-flex flex-row p-3">
-              <div class="bg-white mr-2 p-3"><span class="text-muted">{{mensaje.mensaje}}</span>
-                <br>
-                <ion-note style="font-size: 0.6rem;">
-                  {{mensaje.fecha}}
-                </ion-note>
-              </div>
-              
-               
           </div>
-          </ng-template>
          
-        </div>
-       
-       
-        
-        <div class="form-group px-3">
-          <ng-template [ngIf]="this.hayError">
-            <span class="alert-danger">{{this.error}}</span>
-          </ng-template>
-
-          <!-- <ion-input type="text" class="form-control" placeholder="Escriba su mensaje" [(ngModel)]='mensaje'></ion-input>
-
-        
-          <br> -->
          
-
-           <textarea class="form-control" rows="5" placeholder="Escriba su mensaje" [(ngModel)]='mensaje'></textarea>
-           <ion-button color="success" (click)="mandarMensaje()" expand="block">Enviar</ion-button>
-        </div>
-    </div>
+          
+          <div class="form-group px-3">
+            <ng-template [ngIf]="this.hayError">
+              <span class="alert-danger">{{this.error}}</span>
+            </ng-template>
+  
+             <textarea class="form-control" rows="5" placeholder="Escriba su mensaje" [(ngModel)]='mensaje'></textarea>
+             <ion-button color="success" (click)="mandarMensaje()" expand="block">Enviar</ion-button>
+          </div>
+      </div>
+  </div>
 </div>
+
 </ion-content>
