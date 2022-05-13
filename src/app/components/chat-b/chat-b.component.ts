@@ -14,7 +14,7 @@ export class ChatBComponent implements OnInit {
   spinner:boolean=true;
   mensaje: string;
   listadoMensajesMostrar: Array<Mensaje> = new Array<Mensaje>();
-  error:string="No puedes enviar mensajes vacios.";
+  error:string="No puedes enviar mensajes vacios o con más de 21 carácteres.";
   hayError:boolean=false;
   constructor(public chatService: ChatService, public authService: AuthService, public router:Router) { }
 
@@ -26,7 +26,7 @@ export class ChatBComponent implements OnInit {
   }
 
   mandarMensaje(){
-    if (this.mensaje=="" || this.mensaje==null)
+    if (this.mensaje=="" || this.mensaje==null || this.mensaje.length>=21)
     {
       this.hayError=true;
     }else{

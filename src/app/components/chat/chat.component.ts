@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class ChatComponent implements OnInit {
   mensaje: string;
   listadoMensajesMostrar: Array<Mensaje> = new Array<Mensaje>();
-  error:string="No puedes enviar mensajes vacios.";
+  error:string="No puedes enviar mensajes vacios o con más de 21 carácteres.";
   hayError:boolean=false;
   spinner:boolean=true;
   constructor(public chatService: ChatService, public authService: AuthService, public router:Router) 
@@ -29,7 +29,7 @@ export class ChatComponent implements OnInit {
   }
 
   mandarMensaje(){
-    if (this.mensaje=="" || this.mensaje==null)
+    if (this.mensaje=="" || this.mensaje==null || this.mensaje.length>=21)
     {
       this.hayError=true;
     }else{

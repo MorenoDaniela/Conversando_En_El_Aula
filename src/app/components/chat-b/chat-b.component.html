@@ -5,7 +5,7 @@
 <div *ngIf="!spinner">
   <ion-row>
     <ion-col>
-      <ion-button color="success" (click)="irASalas()" expand="block">Salas</ion-button>
+      <ion-button color="secondary" (click)="irASalas()" expand="block">Salas</ion-button>
     </ion-col>
     <ion-col>
       <ion-button color="danger" (click)="authService.SignOut()" expand="block">Salir</ion-button>
@@ -56,7 +56,7 @@
             </ng-template>
   
              <textarea class="form-control" rows="5" placeholder="Escriba su mensaje" [(ngModel)]='mensaje'></textarea>
-             <ion-button color="success" (click)="mandarMensaje()" expand="block">Enviar</ion-button>
+             <ion-button color="secondary" (click)="mandarMensaje()" expand="block">Enviar</ion-button>
           </div>
       </div>
   </div>
