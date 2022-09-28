@@ -18,3 +18,13 @@ ion-content{
         stroke: rgb(20, 170, 35);
         fill: rgb(186, 30, 155);
       }
+
+      
+      @font-face{
+        font-family: 'Shadows Into Light';
+        src:url('../../../assets/ShadowsIntoLight-Regular.ttf')
+    }
+    
+    h5, ion-item, ion-label, span, ion-button, ion-input{
+        font-family: 'Shadows Into Light';
+    }
